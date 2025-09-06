@@ -1,0 +1,149 @@
+﻿@{
+    ViewData["Title"] = "Ana Sayfa";
+}
+
+<div class="container-fluid px-4 mt-4">
+    <!-- Hero Section -->
+    <div class="row mb-5">
+        <div class="col-12">
+            <div class="hero-section p-5 text-center fade-in">
+                <h1 class="display-3 fw-bold text-warning mb-4">
+                    <i class="fas fa-store icon-glow me-3"></i>Market Sitesi
+                </h1>
+                <p class="lead fs-4 text-light mb-4">Modern ve havalı market yönetim sistemi</p>
+                <hr class="my-4 border-warning opacity-50">
+                <p class="fs-5 text-light">Yiyecek ve içecek ürünlerinizi profesyonel bir şekilde yönetin</p>
+                <div class="mt-4">
+                    <span class="badge bg-warning text-dark fs-6 me-2">Entity Framework</span>
+                    <span class="badge bg-warning text-dark fs-6 me-2">Repository Pattern</span>
+                    <span class="badge bg-warning text-dark fs-6">Responsive Design</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Feature Cards -->
+    <div class="row g-4 mb-5 justify-content-center" style="margin-bottom: 4rem !important;">
+        <div class="col-xl-4 col-lg-5 col-md-6">
+            <div class="card-dark h-100 slide-in-left">
+                <div class="card-body text-center p-4">
+                    <div class="mb-4">
+                        <i class="fas fa-tags fa-4x icon-orange icon-glow"></i>
+                    </div>
+                    <h4 class="card-title text-warning fw-bold mb-3">Kategoriler</h4>
+                    <p class="card-text text-light mb-4">Ürün kategorilerinizi oluşturun, düzenleyin ve organize edin. Hiyerarşik kategori yapısı ile ürünlerinizi kolayca gruplandırın.</p>
+                    <a asp-controller="Kategori" asp-action="Index" class="btn btn-orange btn-lg px-4">
+                        <i class="fas fa-arrow-right me-2"></i>Kategorileri Yönet
+                    </a>
+                </div>
+            </div>
+        </div>
+        
+        <div class="col-xl-4 col-lg-5 col-md-6">
+            <div class="card-dark h-100 fade-in">
+                <div class="card-body text-center p-4">
+                    <div class="mb-4">
+                        <i class="fas fa-utensils fa-4x icon-orange icon-glow"></i>
+                    </div>
+                    <h4 class="card-title text-warning fw-bold mb-3">Yiyecekler</h4>
+                    <p class="card-text text-light mb-4">Yiyecek ürünlerinizi detaylı bilgilerle ekleyin. Fiyat, stok, kategori ve açıklama bilgilerini kolayca yönetin.</p>
+                    <a asp-controller="Yiyecek" asp-action="Index" class="btn btn-orange btn-lg px-4">
+                        <i class="fas fa-arrow-right me-2"></i>Yiyecekleri Yönet
+                    </a>
+                </div>
+            </div>
+        </div>
+        
+        <div class="col-xl-4 col-lg-5 col-md-6">
+            <div class="card-dark h-100 slide-in-right">
+                <div class="card-body text-center p-4">
+                    <div class="mb-4">
+                        <i class="fas fa-coffee fa-4x icon-orange icon-glow"></i>
+                    </div>
+                    <h4 class="card-title text-warning fw-bold mb-3">İçecekler</h4>
+                    <p class="card-text text-light mb-4">İçecek ürünlerinizi kategorilere göre organize edin. Soğuk ve sıcak içecekler için ayrı yönetim imkanı.</p>
+                    <a asp-controller="Icecek" asp-action="Index" class="btn btn-orange btn-lg px-4">
+                        <i class="fas fa-arrow-right me-2"></i>İçecekleri Yönet
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- System Features -->
+    <div class="row mb-5" style="margin-bottom: 4rem !important;">
+        <div class="col-12">
+            <div class="card-dark">
+                <div class="card-header">
+                    <h3 class="mb-0 text-center">
+                        <i class="fas fa-cogs me-2"></i>Sistem Özellikleri
+                    </h3>
+                </div>
+                <div class="card-body p-4">
+                    <div class="row g-4">
+                        <div class="col-md-6">
+                            <div class="d-flex align-items-center mb-3">
+                                <div class="me-3">
+                                    <i class="fas fa-database fa-2x icon-orange"></i>
+                                </div>
+                                <div>
+                                    <h5 class="text-warning mb-1">Entity Framework Core</h5>
+                                    <p class="text-light mb-0">Modern ORM ile güvenli veritabanı yönetimi</p>
+                                </div>
+                            </div>
+                            <div class="d-flex align-items-center mb-3">
+                                <div class="me-3">
+                                    <i class="fas fa-layer-group fa-2x icon-orange"></i>
+                                </div>
+                                <div>
+                                    <h5 class="text-warning mb-1">Repository Pattern</h5>
+                                    <p class="text-light mb-0">Temiz kod mimarisi ve veri erişim katmanı</p>
+                                </div>
+                            </div>
+                            <div class="d-flex align-items-center">
+                                <div class="me-3">
+                                    <i class="fas fa-mobile-alt fa-2x icon-orange"></i>
+                                </div>
+                                <div>
+                                    <h5 class="text-warning mb-1">Responsive Tasarım</h5>
+                                    <p class="text-light mb-0">Tüm cihazlarda mükemmel görünüm</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="d-flex align-items-center mb-3">
+                                <div class="me-3">
+                                    <i class="fas fa-edit fa-2x icon-orange"></i>
+                                </div>
+                                <div>
+                                    <h5 class="text-warning mb-1">Tam CRUD İşlemleri</h5>
+                                    <p class="text-light mb-0">Oluştur, Oku, Güncelle, Sil işlemleri</p>
+                                </div>
+                            </div>
+                            <div class="d-flex align-items-center mb-3">
+                                <div class="me-3">
+                                    <i class="fas fa-shield-alt fa-2x icon-orange"></i>
+                                </div>
+                                <div>
+                                    <h5 class="text-warning mb-1">Model Validasyonları</h5>
+                                    <p class="text-light mb-0">Güvenli ve doğrulanmış veri girişi</p>
+                                </div>
+                            </div>
+                            <div class="d-flex align-items-center">
+                                <div class="me-3">
+                                    <i class="fas fa-link fa-2x icon-orange"></i>
+                                </div>
+                                <div>
+                                    <h5 class="text-warning mb-1">İlişkili Veri Yönetimi</h5>
+                                    <p class="text-light mb-0">Kategoriler ve ürünler arası bağlantılar</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Extra spacing for footer -->
+    <div style="height: 3rem;"></div>
+</div>

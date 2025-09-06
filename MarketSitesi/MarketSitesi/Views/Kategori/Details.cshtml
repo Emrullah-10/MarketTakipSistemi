@@ -1,0 +1,87 @@
+@model MarketSitesi.Models.Kategori
+
+@{
+    ViewData["Title"] = "Kategori Detayları";
+}
+
+<div class="container mt-4">
+    <div class="row">
+        <div class="col-12">
+            <div class="card">
+                <div class="card-header bg-info text-white">
+                    <h4 class="mb-0"><i class="fas fa-info-circle"></i> Kategori Detayları</h4>
+                </div>
+                <div class="card-body">
+                    <dl class="row">
+                        <dt class="col-sm-3">@Html.DisplayNameFor(model => model.Ad)</dt>
+                        <dd class="col-sm-9">@Html.DisplayFor(model => model.Ad)</dd>
+                        
+                        <dt class="col-sm-3">@Html.DisplayNameFor(model => model.Aciklama)</dt>
+                        <dd class="col-sm-9">@Html.DisplayFor(model => model.Aciklama)</dd>
+                        
+                        <dt class="col-sm-3">Yiyecek Sayısı</dt>
+                        <dd class="col-sm-9">
+                            <span class="badge bg-primary fs-6">@Model.Yiyecekler.Count</span>
+                        </dd>
+                    </dl>
+
+                    @if (Model.Yiyecekler.Any())
+                    {
+                        <h5 class="mt-4 mb-3">Bu Kategorideki Yiyecekler</h5>
+                        <div class="table-responsive">
+                            <table class="table table-striped">
+                                <thead class="table-dark">
+                                    <tr>
+                                        <th>Yiyecek Adı</th>
+                                        <th>Fiyat</th>
+                                        <th>Stok</th>
+                                        <th>İşlemler</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    @foreach (var yiyecek in Model.Yiyecekler)
+                                    {
+                                        <tr>
+                                            <td>@yiyecek.Ad</td>
+                                            <td>@yiyecek.Fiyat.ToString("C")</td>
+                                            <td>
+                                                <span class="badge @(yiyecek.StokAdedi > 10 ? "bg-success" : yiyecek.StokAdedi > 0 ? "bg-warning" : "bg-danger")">
+                                                    @yiyecek.StokAdedi
+                                                </span>
+                                            </td>
+                                            <td>
+                                                <a asp-controller="Yiyecek" asp-action="Details" asp-route-id="@yiyecek.Id" class="btn btn-sm btn-info">
+                                                    <i class="fas fa-eye"></i> Detay
+                                                </a>
+                                            </td>
+                                        </tr>
+                                    }
+                                </tbody>
+                            </table>
+                        </div>
+                    }
+                    else
+                    {
+                        <div class="alert alert-info">
+                            <i class="fas fa-info-circle"></i> Bu kategoride henüz yiyecek bulunmuyor.
+                        </div>
+                    }
+
+                    <div class="mt-4">
+                        <a asp-action="Edit" asp-route-id="@Model.Id" class="btn btn-warning">
+                            <i class="fas fa-edit"></i> Düzenle
+                        </a>
+                        <a asp-action="Delete" asp-route-id="@Model.Id" class="btn btn-danger">
+                            <i class="fas fa-trash"></i> Sil
+                        </a>
+                        <a asp-action="Index" class="btn btn-secondary">
+                            <i class="fas fa-arrow-left"></i> Geri Dön
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Extra spacing for footer -->
+    <div style="height: 2rem;"></div>
+</div>

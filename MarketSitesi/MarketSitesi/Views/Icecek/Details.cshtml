@@ -1,0 +1,114 @@
+@model MarketSitesi.Models.Icecek
+
+@{
+    ViewData["Title"] = "İçecek Detayları";
+}
+
+<div class="container-fluid px-4 mt-4">
+    <div class="row justify-content-center">
+        <div class="col-lg-8 col-md-10">
+            <!-- Header -->
+            <div class="text-center mb-4 fade-in">
+                <h1 class="display-5 fw-bold text-warning mb-2">
+                    <i class="fas fa-info-circle icon-glow me-3"></i>İçecek Detayları
+                </h1>
+                <p class="text-light fs-5">İçecek bilgilerini görüntüleyin</p>
+            </div>
+
+            <!-- Details Card -->
+            <div class="card-dark slide-in-left">
+                <div class="card-header">
+                    <h3 class="mb-0 text-center">
+                        <i class="fas fa-coffee me-2"></i>@Html.DisplayFor(model => model.Ad)
+                    </h3>
+                </div>
+                <div class="card-body p-4">
+                    <div class="row g-4">
+                        <div class="col-md-6">
+                            <div class="d-flex align-items-center mb-4">
+                                <div class="me-3">
+                                    <i class="fas fa-coffee fa-3x icon-orange"></i>
+                                </div>
+                                <div>
+                                    <h5 class="text-warning mb-1">İçecek Adı</h5>
+                                    <p class="text-light fs-5 mb-0">@Html.DisplayFor(model => model.Ad)</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="d-flex align-items-center mb-4">
+                                <div class="me-3">
+                                    <i class="fas fa-utensils fa-3x icon-orange"></i>
+                                </div>
+                                <div>
+                                    <h5 class="text-warning mb-1">Yiyecek</h5>
+                                    <p class="text-light fs-5 mb-0">@Html.DisplayFor(model => model.Yiyecek.Ad)</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="d-flex align-items-center mb-4">
+                                <div class="me-3">
+                                    <i class="fas fa-lira-sign fa-3x icon-orange"></i>
+                                </div>
+                                <div>
+                                    <h5 class="text-warning mb-1">Fiyat</h5>
+                                    <p class="text-light fs-5 mb-0">@Html.DisplayFor(model => model.Fiyat) ₺</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="d-flex align-items-center mb-4">
+                                <div class="me-3">
+                                    <i class="fas fa-boxes fa-3x icon-orange"></i>
+                                </div>
+                                <div>
+                                    <h5 class="text-warning mb-1">Stok Adedi</h5>
+                                    <p class="text-light fs-5 mb-0">@Html.DisplayFor(model => model.StokAdedi)</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="d-flex align-items-center mb-4">
+                                <div class="me-3">
+                                    <i class="fas fa-weight fa-3x icon-orange"></i>
+                                </div>
+                                <div>
+                                    <h5 class="text-warning mb-1">Hacim</h5>
+                                    <p class="text-light fs-5 mb-0">@Html.DisplayFor(model => model.Hacim)</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-12">
+                            <div class="d-flex align-items-start mb-4">
+                                <div class="me-3">
+                                    <i class="fas fa-info-circle fa-3x icon-orange"></i>
+                                </div>
+                                <div>
+                                    <h5 class="text-warning mb-1">Açıklama</h5>
+                                    <p class="text-light fs-5 mb-0">@Html.DisplayFor(model => model.Aciklama)</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="d-flex justify-content-between mt-5 mb-5" style="margin-bottom: 8rem !important;">
+                        <a asp-action="Index" class="btn btn-outline-secondary btn-lg px-4">
+                            <i class="fas fa-arrow-left me-2"></i>Geri Dön
+                        </a>
+                        <div>
+                            <a asp-action="Edit" asp-route-id="@Model?.Id" class="btn btn-outline-warning btn-lg px-4 me-2">
+                                <i class="fas fa-edit me-2"></i>Düzenle
+                            </a>
+                            <a asp-action="Delete" asp-route-id="@Model?.Id" class="btn btn-outline-danger btn-lg px-4">
+                                <i class="fas fa-trash me-2"></i>Sil
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Extra spacing for footer -->
+    <div style="height: 2rem;"></div>
+</div>
